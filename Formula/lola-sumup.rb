@@ -1,20 +1,20 @@
 class LolaSumup < Formula
   desc "A cli program to create LoLa specific exports from monthly SumUp reports"
   homepage "https://github.com/jococo-ch/lola-sumup"
-  version "0.5.1"
+  version "0.5.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.1/lola-sumup-aarch64-apple-darwin.tar.xz"
-      sha256 "2faa0399a6be74a27d964941dba84ecc4fa811a6f2063dbf81566b0ed217e202"
+      url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.2/lola-sumup-aarch64-apple-darwin.tar.xz"
+      sha256 "67126f90ed00f80106af075df1dbedee66ea769895a47ac42c35c1822e84dd66"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.1/lola-sumup-x86_64-apple-darwin.tar.xz"
-      sha256 "3190a0a470ad3b284dfc6d9cef93f4f99643e3f66bbf37318d8f59f4d2c083f6"
+      url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.2/lola-sumup-x86_64-apple-darwin.tar.xz"
+      sha256 "2cecac5f6ad7ad9b976ac52566bc60ffd6fc8f9628f19c8814a99b7dc4935801"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.1/lola-sumup-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "41b757d4d06da8e7618541bf97784236bccfb491f3342e43aa91991670b6b952"
+    url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.2/lola-sumup-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "2be4e8f458f23c5897101c700ff05d3c0b937dddb40913411a3ecb02144cd891"
   end
   license "MIT"
 
@@ -40,9 +40,15 @@ class LolaSumup < Formula
   end
 
   def install
-    bin.install "lola-sumup" if OS.mac? && Hardware::CPU.arm?
-    bin.install "lola-sumup" if OS.mac? && Hardware::CPU.intel?
-    bin.install "lola-sumup" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "lola-sumup"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "lola-sumup"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "lola-sumup"
+    end
 
     install_binary_aliases!
 
