@@ -1,20 +1,20 @@
 class LolaSumup < Formula
   desc "A cli program to create LoLa specific exports from monthly SumUp reports"
   homepage "https://github.com/jococo-ch/lola-sumup"
-  version "0.5.2"
+  version "0.5.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.2/lola-sumup-aarch64-apple-darwin.tar.xz"
-      sha256 "67126f90ed00f80106af075df1dbedee66ea769895a47ac42c35c1822e84dd66"
+      url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.3/lola-sumup-aarch64-apple-darwin.tar.xz"
+      sha256 "47f7461ef1e4b3ab2ca8f692de5d8e2902a8bb82980fb0cc270be4d138c90673"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.2/lola-sumup-x86_64-apple-darwin.tar.xz"
-      sha256 "2cecac5f6ad7ad9b976ac52566bc60ffd6fc8f9628f19c8814a99b7dc4935801"
+      url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.3/lola-sumup-x86_64-apple-darwin.tar.xz"
+      sha256 "8faf108bee714cdd3aecbe96b91a737f6814a3121f851ce7cf223a4896dadd87"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.2/lola-sumup-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "2be4e8f458f23c5897101c700ff05d3c0b937dddb40913411a3ecb02144cd891"
+    url "https://github.com/jococo-ch/lola-sumup/releases/download/v0.5.3/lola-sumup-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "33b476a36428e636590b119c76bcbbbfa0607b649337c9e5cf2fbb3c7b1c7354"
   end
   license "MIT"
 
